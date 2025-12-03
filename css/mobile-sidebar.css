@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;400;600;700&display=swap');
+
+@font-face {
+font-family: "CoolveticaCondensedRg-Regular";
+src: url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.eot");
+src: url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.eot?#iefix")format("embedded-opentype"),
+url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.woff2")format("woff2"),
+url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.woff")format("woff"),
+url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.ttf")format("truetype"),
+url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.svg#CoolveticaCondensedRg-Regular")format("svg");
+font-weight: 700;
+font-style: normal;
+}
+
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -80%;
+    width: 80%;
+    max-width: 320px;
+    height: 100%;
+    background: #333;
+    color: #fff;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.35s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.mobile-sidebar.active{
+    right: 0;
+}
+
+/* 사이드바 상단 영역 */
+.mobile-sidebar-header{
+    position: relative;           /* ✨ X 버튼의 기준이 되는 요소 */
+    display: flex;
+    align-items: center;
+    justify-content: center;      /* 가운데에 SOLID. 놓고 싶다면 */
+    padding: 12px 16px;
+    border-bottom: 1px solid #444;
+    background: #333;
+}
+
+.mobile-site-name{
+    font-family: "CoolveticaCondensedRg-Regular";
+    font-size: 18px;
+}
+
+.mobile-login-btn,
+
+/* 닫기(X) 버튼 – 사이드바 기준으로 살짝 왼쪽으로 빼기 */
+/* 공통: 회전 + 페이드만 담당 */
+.mobile-sidebar_close-button {
+    position: fixed;
+    z-index: 300;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+
+    opacity: 0;
+    transform: rotate(0deg);
+    pointer-events: none;
+
+    transition: transform .5s ease, opacity .5s ease;
+}
+
+.mobile-sidebar_close-button.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: rotate(180deg);
+}
+
+.mobile-menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-menu-item{
+    border-bottom: 1px solid #E1E1E1;
+}
+
+.mobile-menu-title{
+    width: 100%;
+    background: #f3f3f3;
+    border: none;
+    padding: 16px;
+    font-size: 15px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.mobile-menu-title.active{
+    background: #ddd;
+}
+
+.mobile-menu-link{
+    display: block;
+    padding: 16px;
+    background: #f3f3f3;
+    font-size: 15px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #222;
+}
+
+.mobile-arrow{
+    transition: transform 0.3s;
+}
+
+.mobile-arrow.active{
+    transform: rotate(180deg);
+}
+
+.mobile-submenu{
+    max-height: 0;
+    overflow: hidden;
+    background: #fff;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-submenu li a{
+    display: block;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #222;
+}
+
+.mobile-overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 150;
+}
+
+.mobile-overlay.active{
+    display: block;
+}
+
+@media screen and (min-width:769px) {
+    .mobile-overlay{
+        display: none;
+    }
+
+    .mobile-sidebar_close-button {
+        display: none !important;
+    }
+}
+
+
+/* 뷰포트가 400px 이하: 슬라이드바가 아직 320px 미만일 때 */
+@media screen and (max-width:400px) {
+    .mobile-sidebar_close-button{
+        top: 4vw;
+        left: 10vw;
+        right: auto;
+        font-size: 7.5vw;
+        transform: translateX(-50%) rotate(0deg);
+    }
+    .mobile-sidebar_close-button.active{
+        transform: translateX(-50%) rotate(180deg);
+    }
+}
+
+/* 뷰포트가 401px ~ 625px: 슬라이드바가 320px로 고정된 구간 */
+@media screen and (min-width:401px) and (max-width:768px) {
+    .mobile-sidebar_close-button{
+        top: 8px;
+        right: 330px;
+        left: auto;
+        font-size: 30px;
+        transform: rotate(0deg);        /* 👉 translateX 없음 */
+    }
+    .mobile-sidebar_close-button.active{
+        transform: rotate(180deg);      /* 👉 회전만 */
+    }
+}

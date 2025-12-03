@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;400;600;700&display=swap');
+
+@font-face {
+font-family: "CoolveticaCondensedRg-Regular";
+src: url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.eot");
+src: url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.eot?#iefix")format("embedded-opentype"),
+url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.woff2")format("woff2"),
+url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.woff")format("woff"),
+url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.ttf")format("truetype"),
+url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.svg#CoolveticaCondensedRg-Regular")format("svg");
+font-weight: 700;
+font-style: normal;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    height: auto;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.header_title{
+    float: left;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 40px;
+    height: 40px;
+    padding: 14px 0px 16px 14px;
+    border: 0px ;
+    margin: 0px ;
+    font-family: "CoolveticaCondensedRg-Regular";
+}
+
+.header_menu{
+    float: right;
+    display:inline-table;
+    table-layout: fixed;
+    height: 40px;
+    padding: 18px 0px 16px 0px;
+    border: 0px ;
+    margin: 0px ; 
+}
+
+.header_menu > li{
+    float:left;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 18px; 
+    font-weight: 700;
+    padding: 0px 18px;
+    height: 40px;
+    border: 0px ;
+    margin: 0px ;
+    vertical-align: middle;
+    display: table-cell;
+    text-decoration: none;
+
+}
+
+a.header_menu-button{ color:  #191919; vertical-align:middle;}
+a.header_menu-button:hover{ 
+    text-decoration: none ;
+    color: #E1E1E1; }
+
+a { text-decoration: none; color: black; }    
+a:visited { text-decoration: none; }    
+a:hover { text-decoration: none; }    
+a:focus { text-decoration: none; }    
+a:hover, a:active { text-decoration: none; }
+
+.mobile-header{
+    width: 100%;
+    height: 14.1vw;
+    border-bottom: solid 0.4vw #E1E1E1 ;
+}
+
+.mobile-header_title{
+    float: left;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 9vw;
+    height: 9vw;
+    padding: 1.8vw 3.3vw 3.3vw 3.3vw;
+    border: 0px ;
+    margin: 0px ;
+    font-family: "CoolveticaCondensedRg-Regular";
+}
+
+.mobile-header_menu-button{
+    float: right;
+    width: 9vw;
+    height: 9vw;
+    padding: 0;
+    margin: 2.6vw 3.3vw 2.5vw 3.3vw;
+    background: url("../images/hamburger.png") center center / 70% no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+
+@media screen and (min-width:769px) {
+    .mobile-header{
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .header_menu,
+    .header_title{
+        display: none;
+    }
+}

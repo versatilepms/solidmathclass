@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;400;600;700&display=swap');
+
+@font-face {
+font-family: "CoolveticaCondensedRg-Regular";
+src: url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.eot");
+src: url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.eot?#iefix")format("embedded-opentype"),
+url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.woff2")format("woff2"),
+url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.woff")format("woff"),
+url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.ttf")format("truetype"),
+url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.svg#CoolveticaCondensedRg-Regular")format("svg");
+font-weight: 700;
+font-style: normal;
+}
+
+.body{
+    margin: 0;
+    padding: 0;
+    font-size: 3vw; 
+}
+
+a { text-decoration: none; color: black; }    
+a:visited { text-decoration: none; }    
+a:hover { text-decoration: none; }    
+a:focus { text-decoration: none; }    
+a:hover, a:active { text-decoration: none; }
+
+.wrapper{
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 100px;
+
+}
+
+.footer{
+    height: 100px;
+    position : relative ;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.mobileapplybutton{
+    font-size: 5vw;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    background-color: black;
+    font-weight: 700;
+    width: 36vw;
+    height: 8vw;
+    padding: 3vw;
+    margin: 0;
+    color: white;
+    display: table-cell;
+    border-radius: 18% 18% 18% 18% / 50% 50% 50% 50%;
+    box-shadow: 0 0 3.1848vw rgba(0,0,0,0.30), 0 0vw 1.82vw rgba(0,0,0,0.20);
+}
+
+.mobileapplywrap{
+    margin: 0 auto;
+    display: table;
+}
+
+.mobile-footer{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    color: gray;
+    font-size: 2.5vw; 
+    text-align: center
+}
+
+.floating-chat-button {
+    position: fixed;
+    right: 12px;
+    bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    
+    background-color: #FEE500;  /* 카카오 옐로우 */
+    color: #000;
+    border-radius: 50vw;
+    padding: 8px 8px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 0px 10px rgba(0,0,0,0.3);
+
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    z-index: 999;
+}
+
+/* hover 효과 */
+.floating-chat-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0px 10px rgba(0,0,0,0.3);
+}
+
+.chat-icon {
+    width: 22px;                        /* 아이콘 크기 */
+    height: 22px;
+    margin-top: -1px;                   /* 세로 위치 미세 조정 */
+}
+
+/* 텍스트 스타일 */
+.chat-text {
+    display: inline-block;
+    line-height: 1;
+    margin-top: -2px;
+    margin-right: 1px;
+}
+
+@media screen and (min-width:769px) {
+    .mobile-footer,
+    .mobileapplywrap{
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .allreview{
+        display: none;
+    }
+}

@@ -1,0 +1,120 @@
+/* 전체 오버레이 */
+.promo-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;                 /* JS에서 display:flex로 변경 */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* 팝업 덩어리 */
+.promo-stack {
+  position: relative;
+  width: 30%;
+  background: transparent;
+}
+
+
+/* 카드 두 장 공통 */
+.promo-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* X 버튼 (오른쪽 위) */
+.promo-close-x {
+  position: absolute;
+  top: 1vw;
+  right: 1.3vw;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  font-size: 1.2vw;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.promo-card-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 하단 버튼 영역 */
+.promo-footer {
+  margin-top: calc(100%); /* 카드 높이만큼 아래로 밀기 */
+  display: flex;
+  background: #fff;
+  overflow: hidden;
+}
+
+.promo-footer-btn {
+  flex: 1;
+  padding: 0.7vw 0;
+  font-size: 0.7vw;
+  color: gray;
+  border-style:solid;
+  border-color: #ededed;
+border-width: 0.1vw;
+  cursor: pointer;
+    
+}
+
+.promo-footer-btn--secondary {
+  background: #ffffff;
+}
+
+.promo-footer-btn--primary {
+  background: #ffffff;
+}
+
+/* ===== 모바일용 ===== */
+@media (max-width: 768px) {
+    
+    .promo-footer-btn {
+      font-size: 3vw;
+    }
+
+  .promo-stack {
+    width: 100vw;
+    max-width: none;
+    height: 100vh;
+    padding: 60px 0 70px; /* 위 X, 아래 버튼 공간 */
+    box-sizing: border-box;
+  }
+
+  /* 카드들은 화면을 꽉 채우게, 완전히 겹치도록 */
+  .promo-card {
+    position: absolute;
+    top: calc(50% - 50vw);        /* X 버튼 아래부터 시작 */
+    left: 0;
+    width: 100%;
+  }
+
+  .promo-close-x {
+      font-size: 5vw;
+      top: 3vw;
+      right: 4vw;
+    }
+  /* 두 번째 카드도 이동 없음 (겹치도록) */
+  .promo-card--second {
+    transform: none;
+  }
+
+  .promo-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10vw;
+    bottom: calc(50% - 50vw);
+    margin-top: 0;
+    border-radius: 0;
+  }
+}

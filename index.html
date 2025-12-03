@@ -1,723 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lag="ko">
 <div>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>솔리드수학</title>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;400;600;700&display=swap');
-
-        
-    @font-face {
-    font-family: "CoolveticaCondensedRg-Regular";
-    src: url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.eot");
-    src: url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/0754a87a6aa14ab86abe03e805d71adf.svg#CoolveticaCondensedRg-Regular")format("svg");
-    font-weight: 700;
-    font-style: normal;
-        }
-        #body{
-            margin: 0;
-            padding: 0;
-            font-size: 3vw; 
-
-        }
-        #header{
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            height: auto;
-            box-sizing: border-box;
-            background-color: white;
-           
-           
-        }
-        .logotitle{
-            float: left;
-            text-align: left;
-            vertical-align: middle;
-            font-size: 40px;
-            height: 40px;
-            padding: 14px 0px 16px 14px;
-            border: 0px ;
-            margin: 0px ;
-            font-family: "CoolveticaCondensedRg-Regular";
-        }
-        .gnb{
-            float: right;
-            display:inline-table;
-            table-layout: fixed;
-            height: 40px;
-            padding: 18px 0px 16px 0px;
-            border: 0px ;
-            margin: 0px ;
-            
-        }
-        
-        .gnb>li{
-            float:left;
-            font-family: 'Noto Sans KR', sans-serif;
-            font-size: 18px; 
-            font-weight: 700;
-            padding: 0px 18px;
-            height: 40px;
-            border: 0px ;
-            margin: 0px ;
-            vertical-align: middle;
-            display: table-cell;
-            text-decoration: none;
-            
-        }
-        
-        .mainimages{
-            width: 100% ;
-            padding: 68px 0px 0px 0px;
-            border: 0px ;
-            margin: 0px ;
-            font-size: 0px;
-            display: block;
-            
-            
-        }
-        
-        
-        a.menubutton{ color:  #191919; vertical-align:middle;}
-        a.menubutton:hover{ 
-            text-decoration: none ;
-            color: #E1E1E1; }
-        
-        
-        
-        
-        .mobilelogotitle{
-            float: left;
-            text-align: left;
-            vertical-align: middle;
-            font-size: 9vw;
-            height: 9vw;
-            padding: 1.8vw 3.3vw 3.3vw 3.3vw;
-            border: 0px ;
-            margin: 0px ;
-            font-family: "CoolveticaCondensedRg-Regular";
-        }
-
-		.mobilemenuopen{
-            float: right;
-            text-align: left;
-            vertical-align: middle;
-            font-size: 9vw;
-            height: 9vw;
-            padding: 1.8vw 3.3vw 3.3vw 3.3vw;
-            border: 0px ;
-            margin: 0px ;
-            font-family: "CoolveticaCondensedRg-Regular";
-        }
-		
-        .mobilemainimages{
-            width: 100% ;
-            padding: 22.1vw 0px 0px 0px;
-            border: 0px ;
-            margin: 0px ;
-            font-size: 0px;
-            display: block;
-            
-        }
-        
-       
-        
-        a { text-decoration: none; color: black; }    
-        a:visited { text-decoration: none; }    
-        a:hover { text-decoration: none; }    
-        a:focus { text-decoration: none; }    
-        a:hover, a:active { text-decoration: none; }
-        
-        
-      
-        
-       
-        
-        
-        #wrapper{
-            height: auto;
-            min-height: 100%;
-            padding-bottom: 100px;
-            
-        }
-        
-        
-        footer{
-            height: 100px;
-            position : relative ;
-            background-color: white;
-            margin: 0;
-            padding: 0;
-        }
-        
-        
-        .mobileintroducewrap{
-            margin: 6vw;
-        }
-        
-        .mobileintroduce{
-            display: table;
-            margin: 3vw auto 5vw auto;
-        }
-        
-        .mobileintroduceinside{
-            display: table-cell;
-            background-color: white;
-            width: 61.7vw;
-            height: 5vw;
-            border-radius: 3% 3% 3% 3%/8% 8% 8% 8%;
-            padding: 3.3vw;
-            box-shadow: 0 0 3.1848vw rgba(0,0,0,0.30), 0 0vw 1.82vw rgba(0,0,0,0.20);
-        }
-        .mobileintroducetitle{
-            font-family: 'Noto Sans KR', sans-serif;
-            font-weight: 700;
-            text-align: center;
-            font-size: 5.8vw;
-            padding: 0px;
-            margin-bottom: 2vw;
-            margin-top: 0;
-
-            
-
-        }
-        
-         .mobileintroducetext{
-            font-family: 'Noto Sans KR', sans-serif;
-            font-weight: 600;
-            text-align: center;
-            font-size: 3vw; 
-            color: gray;
-            margin-top: 0;
-            margin-bottom: 0vw;
-            padding: 0;
-
-         
-            
-
-        }
-        
-        .medicine{
-            color: transparent;
-            background: linear-gradient(-45deg, deeppink ,blueviolet);
-            display: inline-block;
-            -webkit-background-clip:text;
-        }
-        
-        .nubaek{
-            color: transparent;
-            background: linear-gradient(-45deg, aqua ,blueviolet);
-            display: inline-block;
-            -webkit-background-clip:text;
-        }
-        
-        .sooup{
-            color: transparent;
-            background: linear-gradient(45deg, red ,yellow);
-            display: inline-block;
-            -webkit-background-clip:text;
-            background-color: gold
-        }
-        
-        .indextitle{
-            font-family: 'Noto Sans KR', sans-serif;
-            font-weight: 800;
-            font-size: 2vw; 
-            text-align: center
-
-        }
-        
-        .mobileindextitle{
-            font-family: 'Noto Sans KR', sans-serif;
-            font-weight: 800;
-            font-size: 5vw; 
-            text-align: center
-
-        }
-        
-        .review{
-            box-sizing:border-box;
-            background-color: white;
-            box-shadow: 0 0.082vw 2.2848vw rgba(0,0,0,0.25), 0 0.82vw 0.82vw rgba(0,0,0,0.22);
-            width: 16.3vw;
-            height: 20.4vw;
-            padding: 1.23vw;
-            margin:0px;
-            display: table-cell;
-            font-weight: 500;
-            font-family: 'Noto Sans KR', sans-serif;
-            text-align: center;
-            font-size: 0.98vw; 
-            border-radius: 5% 5% 5% 5%/4% 4% 4% 4%;
-      
-
-        }
-        
-        .blank{
-            box-sizing:border-box;
-            width: 4.08vw;
-            padding: 0px;
-            margin:0px;
-            display: table-cell;
-         
-        }
-        
-        .reviewtable{
-           display: table;
-           margin: auto;
-           padding: 0;
-        
-        }
-        .stars{
-            width: 9.8vw ;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 0.41vw;
-        }
-        
-        .mobileallreview{
-            position: relative;
-        }
-       
-        .reviewslidesection input[id*="review"]{
-            display: none;
-        
-        }
-        
-        .reviewslidesection .reviewslidewrap{
-            max-width:75vw;
-            margin: 0 auto;
-            overflow: hidden;
-       
-        }
-        
-        .reviewslidelist{
-            white-space: nowrap;
-            font-size: 0;
-            padding: 0;
-            
-        }
-        
-        .reviewslidelist>li{
-            display: inline-block;
-            vertical-align: middle;
-            width: 100%;
-            transition: all, .5s;
-        }
-        
-        .reviewslidelist>li>a{
-            display: block;
-            position: relative;
-        }
-        
-    
-        .reviewbox{
-            width: 100%;
-            
-        }
-        
-        .reviewboxinside{
-            width: 80%;
-            height: 32vw;
-            margin: 3vw auto;
-            background-color: white;
-            text-align: center;
-            font-family: 'Noto Sans KR', sans-serif;
-            font-size: 3vw;
-            border-radius: 3% 3% 3% 3%/5% 5% 5% 5%;
-            padding: 4vw;
-            box-shadow: 0 0 3.1848vw rgba(0,0,0,0.30), 0 0vw 1.82vw rgba(0,0,0,0.20);
-
-
-        }
-        
-        .reviewboxtitle{
-            font-family: 'Noto Sans KR', sans-serif;
-            font-size: 3.7vw;
-            font-weight: 550;
-            text-align: center;
-            margin: 1vw 0vw 3vw 0vw;
-    
-            
-        }
-        
-        .reviewboxtext{
-            font-family: 'Noto Sans KR', sans-serif;
-            font-size: 2.9vw;
-            font-weight: 400;
-            text-align: center;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .reviewboxname{
-            font-family: 'Noto Sans KR', sans-serif;
-            font-size: 2.4vw;
-            font-weight: 400;
-            color: gray;
-            text-align: center;
-            padding: 2vw;
-            margin: 0;
-        }
-        
-        .reviewslidesection .slide-control [class*="control"] label{
-            position: absolute;
-            z-index: 10;
-            top:60%;
-            transform: translateY(-40%);
-            padding:5vw;
-            cursor: pointer;
-        
-        }
-        
-        
-        .reviewslidesection .slide-control [class*="control"] label.prev{
-            left:2vw;
-            background: url(images/left.png) center center /40% no-repeat;
-            
-        }
-        
-        .reviewslidesection .slide-control [class*="control"] label.next{ 
-            right:2vw;
-            background: url(images/right.png) center center /40% no-repeat;
-            
-        }
-        
-        
-        #reviewslide01:checked ~ .reviewslidewrap .reviewslideli {transform:translateX(0%);}
-        #reviewslide02:checked ~ .reviewslidewrap .reviewslideli {transform:translateX(-100%);}
-        #reviewslide03:checked ~ .reviewslidewrap .reviewslideli {transform:translateX(-200%);}
-        #reviewslide04:checked ~ .reviewslidewrap .reviewslideli {transform:translateX(-300%);}
-  
-        .slide-control [class*="control"] {display:none;}
-        #reviewslide01:checked ~ .slide-control .control01 {display:block;}
-        #reviewslide02:checked ~ .slide-control .control02 {display:block;}
-        #reviewslide03:checked ~ .slide-control .control03 {display:block;}
-        #reviewslide04:checked ~ .slide-control .control04 {display:block;}
-
-        .mobileapplybutton{
-            font-size: 5vw;
-            font-family: 'Noto Sans KR', sans-serif;
-            text-align: center;
-            background-color: black;
-            font-weight: 700;
-            width: 36vw;
-            height: 8vw;
-            padding: 3vw;
-            margin: 0;
-            color: white;
-            display: table-cell;
-            border-radius: 18% 18% 18% 18% / 50% 50% 50% 50%;
-            box-shadow: 0 0 3.1848vw rgba(0,0,0,0.30), 0 0vw 1.82vw rgba(0,0,0,0.20);
-
-            
-        }
-        
-        
-        .mobileapplywrap{
-            margin: 0 auto;
-            display: table;
-        }
-        
-        
-        .mobilemainvideos{
-            width: 80vw;
-            height:45vw;
-            padding: 0;
-            margin: 0;
-                
-            
-        }
-        
-        .mobilemainvideosalign{
-            padding: 0;
-            margin: 0;
-        }
-        
-        .mobilemainvideoswrap{
-            margin: 5vw auto;
-            padding: 0;
-        }
-        
-        
-        #mobileheader{
-			width: 100%;
-			height: 14.1vw;
-			border-bottom: solid 0.4vw #E1E1E1 ;
-		}
-        .mobilefooter{
-            font-family: 'Noto Sans KR', sans-serif;
-            font-weight: 500;
-            color: gray;
-            font-size: 2.5vw; 
-            text-align: center
-            
-        }
-        
-        
-        @media screen and (min-width:625px) {
-            #mobileheader, .mobilemainimages, .mobileallreview, .mobileintroducewrap, .mobileapplywrap, .mobilemainvideoswrap, .mobilefooter{display: none;}
-        }
-        
-        @media screen and (max-width:625px) {
-            .gnb, .logotitle, .mainimages, .allreview, .mobilegnb{display: none;}
-        }
-        
-    </style>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/mobile-sidebar.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <link rel="stylesheet" href="css/home.css" />
   </head>
     </div>
   
-    <body id="body">
-    <header id="header">
-        
-       <a class="logotitle" href="index.html">SOLID.</a>
-      
-        <ul class="gnb">
+    <body class="body">
+    <header class="header">
+    <!-- PC용 헤더 -->
+        <a class="header_title" href="index.html">SOLID.</a>
+        <ul class="header_menu">
             <li>
-            <a class="menubutton" href="about.html">솔리드수학</a>
+                <a class="header_menu-button" href="about.html">솔리드수학</a>
             </li>
         
             <li>
-            <a class="menubutton" href="contents.html">콘텐츠</a>
+                <a class="header_menu-button" href="contents.html">콘텐츠</a>
             </li>
 
             <li>
-             <a class="menubutton" href="curriculum.html">커리큘럼</a>
+                <a class="header_menu-button" href="curriculum.html">커리큘럼</a>
             </li>
 
             <li>
-             <a class="menubutton" href="notice.html">안내</a>
+                <a class="header_menu-button" href="notice.html">안내</a>
             </li>
        
         </ul>
-        
-        <div id="mobileheader">
-          <a class="mobilelogotitle" href="index.html">SOLID.</a>
-		  <a class="mobilemenuopen" href="index.html">MENU</a>
+
+        <!-- 모바일용 헤더 -->
+        <div class="mobile-header">
+            <a class="mobile-header_title" href="index.html">SOLID.</a>
+            <button class="mobile-header_menu-button" type="button"></button>
         </div>    
     </header>
-    <div id="wrapper">
-    <img src="images/main01.png" class="mainimages">
-    
         
-    <img src="images/mobilemain01.png" class="mobilemainimages">    
-    
-    
-        
-        
-        
-    <div class="allreview">
-    <p class="indextitle"> 수강 후기 </p>
-    <div class="reviewtable">
-        <div class="review">
-            <img src="images/stars.png" class="stars"><br>
-            첫번째리뷰
-            <br>
-            선생님이 맛있고 설명이 친절해요
-            </div> 
+    <!-- ⭐ 모바일 사이드바 메뉴 시작 -->
+    <!-- 사이드바 “바깥”에 있는 닫기 버튼 -->
+    <button class="mobile-sidebar_close-button" type="button">✕</button>
 
-            <div class="blank">
-            </div>    
-
-            <div class="review">
-            <img src="images/stars.png" class="stars"><br>
-            두번째리뷰
-            </div> 
-
-
-            <div class="blank">
-            </div>
-
-            <div class="review">
-            <img src="images/stars.png" class="stars"><br>
-            세번째리뷰
-            </div> 
-
-            <div class="blank">
-            </div>
-
-            <div class="review">
-            <img src="images/stars.png" class="stars"><br>
-            네번째리뷰
-        </div> 
-    </div>
-    </div>
-    <div class="mobileintroducewrap">
-    <div class="mobileintroduce">
-    <div class="mobileintroduceinside">
-    <p class="mobileintroducetitle">
-        인제대학교 <span class="medicine">의학과</span> 재학</p>
-    <p class="mobileintroducetext">
-        정시 일반전형 합격
-        </p>
-    </div>
-    </div>
-        
-    <div class="mobileintroduce">
-    <div class="mobileintroduceinside">
-    <p class="mobileintroducetitle">
-        누적백분위 상위 <span class="nubaek">0.37%</span></p>
-    <p class="mobileintroducetext">
-        2021학년도 수능
-        </p>
-    </div>
-    </div>
-    
-    <div class="mobileintroduce">
-    <div class="mobileintroduceinside">
-    <p class="mobileintroducetitle">
-        3년간 <span class="sooup">21명</span> 수업 경력</p>
-    <p class="mobileintroducetext">
-        고등부 1:1 맞춤형 대면 수업 기준
-        </p>
-    </div>
-    </div>    
-        
-    </div>
-        
-    <div class="mobilemainvideoswrap"   >
-    <p class="mobilemainvideosalign" align="middle">
-    <iframe class="mobilemainvideos" width="1600" height="900" src="https://www.youtube.com/embed/oyaavCacyHM?si=s2bQwP_o8niaMy2x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-    
-    </iframe>
-    </p>
-    </div>    
-        
-        
-    <div class="mobileallreview">
-        <p class="mobileindextitle"> 수강 후기 </p>
-
-        <div class="reviewslidesection">
-            <input type="radio" name="reviewslide" id="reviewslide01" checked>
-            <input type="radio" name="reviewslide" id="reviewslide02">
-            <input type="radio" name="reviewslide" id="reviewslide03">
-            <input type="radio" name="reviewslide" id="reviewslide04">
-            
-            <div class="reviewslidewrap">
-                <ul class="reviewslidelist">
-                    <li class="reviewslideli">
-                        <a>
-                           <div class="reviewbox">
-                                <div class="reviewboxinside">
-                                    <p class="reviewboxtitle">"선생님이 맛있고 설명이 친절해요"</p>
-                                    <p class="reviewboxtext">
-                                        선생님이 굉장히 맛있고<br> 
-                                        그리고 설명이 친절하십니다.<br>
-                                        반찬으로 먹으면 밥 한공기 뚝딱입니다.<br>
-                                        강력 추천합니다.
-                                       
-                                    </p>
-                                    <p class="reviewboxname">- 박*수 -</p>    
-                                </div>
-                            
-                            </div>
-                        </a>
-                    </li>
-                    <li class="reviewslideli">
-                        <a>
-                            
-                            <div class="reviewbox">
-                                  <div class="reviewboxinside">
-                                    <p class="reviewboxtitle">"잘생겼어요"</p>
-                                    <p class="reviewboxtext">
-                                        잘생겨서 공부에 방해가 됩니다.<br> 
-                                        되도록 얼굴 쳐다보지 마시고 문제에<br>
-                                        집중하세요. 그렇지 않으면 수험생활에<br>
-                                        치명적일 수 있습니다.
-                                       
-                                    </p>
-                                    <p class="reviewboxname">- 홍*동 -</p>    
-                                </div>
-                            
-                            </div>
-                           
-                        </a>
-                    </li>
-                    <li class="reviewslideli">
-                        <a>                            
-                             <div class="reviewbox">
-                                  <div class="reviewboxinside">
-                                    <p class="reviewboxtitle">"링딩동 링딩동 링디기딩디기 딩딩딩"</p>
-                                    <p class="reviewboxtext">
-                                        암 욜맨 암욜맨 그대여 다라닷닷 오늘도<br> 
-                                        빠빠 빨간맛 궁금해 허니 깨물면 점점 녹아든<br>
-                                        스트로베리 그 맛<br>
-                                        수능금지곡이 부르고 싶어지네요.
-                                       
-                                    </p>
-                                    <p class="reviewboxname">- 김*철 -</p>    
-                                </div>
-                            
-                            </div>
-                        </a>
-                    </li>                  
-                     <li class="reviewslideli">
-                        <a>                            
-                             <div class="reviewbox">
-                                 <div class="reviewboxinside">
-                                    <p class="reviewboxtitle">"겸손할 줄 모르고 사람 무시하는 선생"</p>
-                                    <p class="reviewboxtext">
-                                        수능 10등급은 사람도 아닙니까?<br> 
-                                        엘리트주의가 무척 심하네요. 이래서 의사들이 <br>
-                                        욕먹나 봅니다. 수학 조금 잘한다고 잘난 채 하는데,<br>
-                                        병원 차리기만 해보세요. 동네에 소문낼테니깐.
-                                       
-                                    </p>
-                                    <p class="reviewboxname">- 이*명 -</p>    
-                                </div>
-                            </div>                       
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="slide-control">
-            <div class="control01">
-                <label for="reviewslide04" class="prev"></label>
-                <label for="reviewslide02" class="next"></label>
-            </div>
-            <div class="control02">
-                <label for="reviewslide01" class="prev"></label>
-                <label for="reviewslide03" class="next"></label>
-            </div>
-            <div class="control03">
-                <label for="reviewslide02" class="prev"></label>
-                <label for="reviewslide04" class="next"></label>
-            </div>
-            <div class="control04">
-                <label for="reviewslide03" class="prev"></label>
-                <label for="reviewslide01" class="next"></label>
-            </div>
-	        </div>
-                 
+    <nav class="mobile-sidebar">
+        <div class="mobile-sidebar-header">
+            <span class="mobile-site-name">SOLID.</span>
         </div>
-    </div>
+
+            <ul class="mobile-menu">
+
+      <!-- 1depth: 솔리드수학 (서브메뉴) -->
+      <li class="mobile-menu-item">
+        <button class="mobile-menu-title" type="button">
+          솔리드수학
+          <span class="mobile-arrow">⌄</span>
+        </button>
+        <ul class="mobile-submenu">
+          <li><a href="about.html">인사말</a></li>
+          <li><a href="teacher.html">원장소개</a></li>
+        </ul>
+      </li>
+
+      <!-- 1depth: 콘텐츠 (서브메뉴: 고등1·2 / 고3·N수 / 초중등부) -->
+      <li class="mobile-menu-item">
+        <button class="mobile-menu-title" type="button">
+          콘텐츠
+          <span class="mobile-arrow">⌄</span>
+        </button>
+        <ul class="mobile-submenu">
+          <li><a href="contents.html">고등1·2</a></li>
+          <li><a href="contents.html">고3·N수</a></li>
+          <li><a href="contents.html">초중등부</a></li>
+        </ul>
+      </li>
+
+      <!-- 1depth: 커리큘럼 (바로 이동) -->
+      <li class="mobile-menu-item">
+        <a href="curriculum.html" class="mobile-menu-link">커리큘럼</a>
+      </li>
+
+      <!-- 1depth: 안내 (바로 이동) -->
+      <li class="mobile-menu-item">
+        <a href="notice.html" class="mobile-menu-link">안내</a>
+      </li>
+    </ul>
+    </nav>
+
+    <div id="mobile-overlay" class="mobile-overlay"></div>
+    <!-- ⭐ 모바일 사이드바 메뉴 끝 -->     
         
-    <br>
-    
-    
         
-    <a href=" https://forms.gle/vdgzHpUwNQsQAEVLA">
+        
+    <div class="wrapper">
+        
+        <!-- 메인 히어로 섹션 -->
+        <section class="hero">
+          <div class="hero__inner">
+            <div class="hero__image"></div>
+
+            <div class="hero__overlay">
+              <p class="hero__eyebrow">
+                결과는, 누가 가르치느냐에서 결정됩니다.
+              </p>
+
+              <p class="hero__line hero__line--sub">
+                <strong>의대생 원장</strong>이 직접 지도하는
+              </p>
+              <p class="hero__line hero__line--sub">
+                상위권 수학 전문관
+              </p>
+
+              <p class="hero__line hero__line--brand">
+                센텀 솔리드수학입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+    
+    <a href="">
         <div class="mobileapplywrap">
         <div class="mobileapplybutton">
        수강신청하기
         </div>
         </div>
     </a>
+        
+    <!-- 프로모션 팝업 오버레이 -->
+    <div id="promoOverlay" class="promo-overlay">
+      <div class="promo-stack">
 
-   
+
+        <!-- 첫 번째 팝업 카드 -->
+        <div class="promo-card" data-promo-id="promo1">
+            <button type="button" class="promo-close-x" aria-label="닫기">✕</button>
+          <a href="#" class="promo-card-link">
+            <img src="images/promo-left.jpg" alt="왼쪽 프로모션">
+          </a>
+        </div>
+          
+        <!-- 하단 버튼 영역 -->
+        <div class="promo-footer">
+          <button type="button" id="promoHideOneDay" class="promo-footer-btn promo-footer-btn--secondary">
+            1일 동안 보지 않기
+          </button>
+          <button type="button" id="promoClose" class="promo-footer-btn promo-footer-btn--primary">
+            닫기
+          </button>
+        </div>
+      </div>
+    </div>    
+        
+    <!-- 카카오톡 문의 버튼 -->
+    <a href="https://pf.kakao.com/_Rxaypn/chat" target="_blank" class="floating-chat-button">
+         <img src="images/kakao.svg" alt="카카오문의" class="chat-icon">
+        <span class="chat-text">문의</span>
+    </a>
 
     </div>
     <footer>
-        <p class="mobilefooter">
+        <p class="mobile-footer">
         센텀 솔리드수학
         <br>
         tel : 010-5098-9039
@@ -725,6 +171,10 @@
             e-mail : solidmathclass@naver.com
         </p>  
     </footer>
+        
+    <!-- ⭐ JS 연결 -->
+    <script src="menu.js"></script>
+    <script src="popup.js"></script>
   </body>
 </html>
 
