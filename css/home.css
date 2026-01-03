@@ -87,7 +87,7 @@
   }
 
   .hero__eyebrow {
-    margin: 0 0 2vw;
+    margin: 0 0 6vw;
     font-size: 4vw;
   }
 
@@ -99,5 +99,281 @@
   .hero__line--brand {
     margin-top: 1.5vw;
     font-size: 6vw;
+  }
+}
+
+/* ===== 차별화된 컨텐츠 섹션 ===== */
+
+.feature {
+  padding: 0vw 3.5vw 3vw;
+  background-color: #f5f5f7;
+}
+
+.feature__inner {
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 4vw;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
+  padding: 6vw 4.5vw 4.5vw;
+}
+
+/* 상단 헤더 */
+
+.feature__header {
+    display: flex;
+    flex-direction: column;     /* 가로 → 세로 정렬 */
+    align-items: center;        /* 가운데 정렬 */
+    text-align: center;         /* 텍스트 중앙정렬 */
+    gap: 3vw;                  /* 번호와 제목 사이 간격 */
+    margin-bottom: 2vw;
+}
+
+/* 숫자 배지 정렬 */
+.feature__badge {
+  width: 6vw;
+  height: 7vw;
+  border-radius: 1.2vw;
+  padding: 0 0 0.5vw 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 900;
+  font-size: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 제목 중앙 정렬 */
+.feature__heading {
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.05em;
+    text-align: center;
+}
+
+.feature__title {
+  font-size: 4vw;
+  font-weight: 700;
+  margin: 0;
+}
+
+.feature__subtitle {
+  margin: 2.5vw 0 0;
+  font-size: 3vw;
+  color: #777;
+}
+
+/* 탭 버튼 */
+
+.feature__tabs {
+  display: flex;
+  margin-bottom: 5vw;
+  justify-content: center;
+  gap: 5vw ;
+}
+
+.feature-tab {
+  display: inline-block;
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.05em;
+  font-size: 3.2vw;
+  font-weight: 700;
+  color: #b0b0b0;
+  cursor: pointer;
+  position: relative;
+}
+
+.feature-tab.is-active {
+  color: #000;
+}
+
+.feature-tab.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);     /* 밑줄의 중심을 글자 중앙으로 */
+  width: 100%;                     /* 글자 길이에 딱 맞게 */
+  height: 0.7vw;
+  background-color: #000;
+  transition: width .25s ease, transform .25s ease;
+}
+
+/* 내용 카드 */
+
+.feature__body {
+  margin-bottom: 3.5vw;
+}
+
+.feature-panel {
+  display: none;
+}
+
+.feature-panel.is-active {
+  display: block;
+}
+
+.feature-panel__image {
+  border-radius: 3vw;
+  overflow: hidden;
+  margin-bottom: 3vw;
+  width: 100%;
+  height: 50vw;
+}
+
+.feature-panel__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-position: center;
+
+}
+
+.feature-panel__text h3 {
+  margin: 0 0 2vw;
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.05em;
+  font-size: 3.5vw;
+  font-weight: 700;
+}
+
+.feature-panel__text p {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.05em;
+  font-size: 3vw;
+  line-height: 4.5vw;
+  color: #555;
+}
+
+/* 자세히 보기 버튼 */
+
+.feature__footer {
+  text-align: right;
+}
+
+.feature__more-btn {
+  display: inline-block;
+  padding: 2vw 3vw;
+  border-radius: 100vw;
+  border: 0.2vw solid #ddd;
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.05em;
+  font-size: 2.5vw;
+  text-decoration: none;
+  color: #333;
+  background-color: #f9f9f9;
+  transition: background-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+.feature__more-btn:hover {
+  background-color: #000;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ===== 2번 카드: 원장 소개 ===== */
+
+/* 프로필 영역 전체 */
+.teacher {
+  text-align: center;
+}
+
+/* 동그란 사진 래퍼 */
+.teacher__photo-wrap {
+  width: 20vw;
+  height: 20vw;
+  margin: 0 auto 3vw;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #f3f3f3;
+}
+
+/* 실제 이미지 – 비율 유지 + 동그란 안에 크롭 */
+.teacher__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* 찌그러지지 않고 적당히 크롭 */
+  object-position: center;
+  display: block;
+  object-position: 100% 8%; 
+}
+
+/* 이름 / 약력 리스트 */
+.teacher__name {
+  margin: 0 0 2vw;
+  letter-spacing: -0.05em;
+  font-size: 3.5vw;
+  font-weight: 700;
+}
+
+.teacher__bio {
+  margin-bottom: 3vw;
+}
+.teacher__list {
+  list-style-position: inside;
+
+}
+
+.teacher__list li {
+    padding-left: ;   /* 기본은 약 12~16px → 줄이면 더 가까워짐 */
+}
+
+.teacher__list {
+  list-style: disc;
+  padding-left: 1.4em;
+  margin: 0;
+  text-align: left;
+  display: inline-block;  /* 가운데 정렬 + 왼쪽 정렬 동시에 */
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.05em;
+  font-size: 3vw;
+  font-weight: 500;
+  color: #555;
+}
+
+.bio-divider {
+    border: none;
+    border-top: 0.3vw dashed #bfbfbf; /* 점선 스타일 */
+    margin: 3vw 0 3vw;
+}
+
+/* 소개 문구 */
+.teacher__intro {
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.05em;
+  font-size: 3vw;
+  text-align: left;
+  line-height: 4.5vw;
+  color: #555;
+}
+
+
+/* 데스크탑(예: 1024px 이상)에서 feature 카드 나란히 배치 */
+@media screen and (min-width: 1024px) {
+
+  /* 1. 두 카드를 가로로 배치하는 래퍼 */
+  .feature-row {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+    display: flex;
+    gap: 32px;              /* 카드 사이 간격 */
+    align-items: stretch;
+  }
+
+  /* 2. 각 feature 카드가 1:1 비율로 넓이를 나눠 갖도록 */
+  .feature-row .feature {
+    flex: 1 1 0;
+    padding: 0;             /* 필요하면 조절 */
+    background-color: transparent; /* 회색 배경이 넓게 깔리면 제거 */
+  }
+
+  .feature-row .feature__inner {
+    height: 100%;           /* 카드 높이 맞추기 */
+    border-radius: 24px;
   }
 }

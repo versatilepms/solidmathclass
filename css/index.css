@@ -39,27 +39,6 @@ a:hover, a:active { text-decoration: none; }
     padding: 0;
 }
 
-.mobileapplybutton{
-    font-size: 5vw;
-    font-family: 'Noto Sans KR', sans-serif;
-    text-align: center;
-    background-color: black;
-    font-weight: 700;
-    width: 36vw;
-    height: 8vw;
-    padding: 3vw;
-    margin: 0;
-    color: white;
-    display: table-cell;
-    border-radius: 18% 18% 18% 18% / 50% 50% 50% 50%;
-    box-shadow: 0 0 3.1848vw rgba(0,0,0,0.30), 0 0vw 1.82vw rgba(0,0,0,0.20);
-}
-
-.mobileapplywrap{
-    margin: 0 auto;
-    display: table;
-}
-
 .mobile-footer{
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 500;
@@ -104,6 +83,8 @@ a:hover, a:active { text-decoration: none; }
 
 /* 텍스트 스타일 */
 .chat-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 650;
     display: inline-block;
     line-height: 1;
     margin-top: -2px;
@@ -111,8 +92,7 @@ a:hover, a:active { text-decoration: none; }
 }
 
 @media screen and (min-width:769px) {
-    .mobile-footer,
-    .mobileapplywrap{
+    .mobile-footer{
         display: none;
     }
 }

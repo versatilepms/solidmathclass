@@ -27,7 +27,7 @@
             </li>
 
             <li>
-                <a class="header_menu-button" href="curriculum.html">커리큘럼</a>
+                <a class="header_menu-button" href="curriculum.html">수업안내</a>
             </li>
 
             <li>
@@ -73,15 +73,15 @@
           <span class="mobile-arrow">⌄</span>
         </button>
         <ul class="mobile-submenu">
-          <li><a href="contents.html">고등1·2</a></li>
-          <li><a href="contents.html">고3·N수</a></li>
-          <li><a href="contents.html">초중등부</a></li>
+          <li><a href="contents.html">교재</a></li>
+          <li><a href="contents.html">복습테스트</a></li>
+          <li><a href="contents.html">학습클리닉</a></li>
         </ul>
       </li>
 
       <!-- 1depth: 커리큘럼 (바로 이동) -->
       <li class="mobile-menu-item">
-        <a href="curriculum.html" class="mobile-menu-link">커리큘럼</a>
+        <a href="curriculum.html" class="mobile-menu-link">수업안내</a>
       </li>
 
       <!-- 1depth: 안내 (바로 이동) -->
@@ -109,10 +109,10 @@
               </p>
 
               <p class="hero__line hero__line--sub">
-                <strong>의대생 원장</strong>이 직접 지도하는
+                <strong>의대생 원장이 직접 지도하는</strong>
               </p>
               <p class="hero__line hero__line--sub">
-                상위권 수학 전문관
+                상위권 수능수학 전문관
               </p>
 
               <p class="hero__line hero__line--brand">
@@ -121,14 +121,145 @@
             </div>
           </div>
         </section>
-    
-    <a href="">
-        <div class="mobileapplywrap">
-        <div class="mobileapplybutton">
-       수강신청하기
+        <div class="feature-row">
+                <!-- 차별화된 컨텐츠 섹션 -->
+        <section class="feature" id="feature-content">
+          <div class="feature__inner">
+
+            <!-- 상단 타이틀 영역 -->
+            <header class="feature__header">
+              <div class="feature__badge">1</div>
+              <div class="feature__heading">
+                <h2 class="feature__title">차별화된 컨텐츠</h2>
+                <p class="feature__subtitle">“상위권을 완성하는 정밀한 수학 시스템”</p>
+              </div>
+            </header>
+
+            <!-- 탭 버튼 -->
+            <nav class="feature__tabs" aria-label="차별화된 컨텐츠 종류">
+              <button class="feature-tab is-active"
+                      type="button"
+                      data-panel="materials"
+                      data-link="materials.html">
+                교재
+              </button>
+              <button class="feature-tab"
+                      type="button"
+                      data-panel="review-test"
+                      data-link="review-test.html">
+                복습테스트
+              </button>
+              <button class="feature-tab"
+                      type="button"
+                      data-panel="clinic"
+                      data-link="clinic.html">
+                학습클리닉
+              </button>
+            </nav>
+
+            <!-- 탭 내용 영역 -->
+            <div class="feature__body">
+              <!-- 교재 -->
+              <article class="feature-panel is-active" id="feature-panel-materials">
+                <div class="feature-panel__image">
+                  <img src="images/materials.jpg" alt="SOLID 자체 교재">
+                </div>
+                <div class="feature-panel__text">
+                  <h3>수능 기출을 가장 깊이 있게 해석한 원장 단독 집필 교재</h3>
+                  <p>
+                    의대 합격 과정과 7년간의 과외 수업을 기반으로 직접 만든, '왜 이렇게 풀어야 하는지'를 단번에 꿰뚫게 만드는 프리미엄 실전 교재입니다. 시중 문제집이 따라올 수 없는 밀도와 전달력을 경험하세요.
+                  </p>
+                </div>
+              </article>
+
+              <!-- 복습테스트 -->
+              <article class="feature-panel" id="feature-panel-review-test">
+                <div class="feature-panel__image">
+                  <img src="images/review-test.jpg" alt="복습 테스트">
+                </div>
+                <div class="feature-panel__text">
+                  <h3>'공통 문항 + 개인 맞춤 문항'으로 빈틈을 매우다</h3>
+                  <p>
+                   매주 1회 진행되는 복습테스트는 이전 수업 내용의 이해도를 확인하는 공통 문항과 학생이 틀렸던 문항을 기반으로 만든 개인별 맞춤 문항으로 구성됩니다.
+                  </p>
+                </div>
+              </article>
+
+              <!-- 학습클리닉 -->
+              <article class="feature-panel" id="feature-panel-clinic">
+                <div class="feature-panel__image">
+                  <img src="images/clinic.jpg" alt="학습 클리닉">
+                </div>
+                <div class="feature-panel__text">
+                  <h3>수학 강사를 넘어, 성공한 수능 플레이어가 만드는 전략</h3>
+                  <p>
+                    정시 의대 합격을 경험한 원장이
+                    실제로 성적을 끌어올린 방법과
+                    상위권 학생들이 반드시 갖춰야 할
+                    학습 전략·루틴·점검 방식을 1:1로 코칭합니다.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <!-- 자세히 보기 버튼 -->
+            <div class="feature__footer">
+              <a href="materials.html"
+                 class="feature__more-btn"
+                 id="feature-more-btn">
+                자세히 보기
+              </a>
+            </div>
+
+          </div>
+        </section>
+        
+        <!-- 2. 원장 소개 섹션 -->
+        <section class="feature feature--teacher" id="feature-teacher">
+          <div class="feature__inner">
+
+            <!-- 상단 번호 + 제목 -->
+            <header class="feature__header">
+              <div class="feature__badge">2</div>
+              <div class="feature__heading">
+                <h2 class="feature__title">검증된 강의력</h2>
+                <p class="feature__subtitle">“결과는, 누가 가르치느냐에서 결정됩니다.”</p>
+              </div>
+            </header>
+
+            <!-- 프로필 이미지 -->
+            <div class="teacher">
+              <div class="teacher__photo-wrap">
+                <img src="images/teacher-profile.png"
+                     alt="센텀 솔리드수학 원장 프로필 사진"
+                     class="teacher__photo">
+              </div>
+
+              <!-- 약력 -->
+              <div class="teacher__bio">
+                <h3 class="teacher__name">박민수 원장</h3>
+                <ul class="teacher__list">
+                <li>인제대학교 의학과 재학</li>
+                  <li>2021학년도 수능 누적백분위 0.37%</li>
+                  <li>6년간 30여명 수능수학 과외 수업</li>
+                  <li>멘사코리아 회원</li>
+                </ul>
+                <hr class="bio-divider">
+              </div>
+
+              <!-- 간단 소개 문구 -->
+              <p class="teacher__intro">
+                수능을 스스로 돌파해 본 경험으로 학생의 길을 정확히 비춥니다. 학습 전략뿐 아니라 멘탈과 루틴까지 책임지고 함께하며, 끝까지 믿고 따를 수 있는 수업을 만들어갑니다.
+              </p>
+            </div>
+
+          </div>
+        </section>
+        
         </div>
-        </div>
-    </a>
+        
+        
+        
         
     <!-- 프로모션 팝업 오버레이 -->
     <div id="promoOverlay" class="promo-overlay">
@@ -175,6 +306,7 @@
     <!-- ⭐ JS 연결 -->
     <script src="menu.js"></script>
     <script src="popup.js"></script>
+    <script src="feature-tabs.js" defer></script>
   </body>
 </html>
 
